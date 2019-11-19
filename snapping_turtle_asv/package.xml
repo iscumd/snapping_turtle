@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>snapping_turtle</name>
+  <name>snapping_turtle_asv</name>
   <version>0.0.1</version>
   <description>A ROS based ASV garbage collection system for calm waters.</description>
 
