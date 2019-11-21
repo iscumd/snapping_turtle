@@ -11,7 +11,7 @@
         <arg name="debug" value="false"/>
     </include>
 
-    <!-- Spawn snapping_turtle.sdf -->
+    <!-- Spawn robot -->
     <include file="$(find snapping_turtle_asv)/launch/spawn_sdf.launch">
         <arg name="robot_name" value="snapping_turtle"/>
         <arg name="x" value="0.0"/>
@@ -20,7 +20,7 @@
         <arg name="roll" value="0"/>
         <arg name="pitch" value="0"/>
         <arg name="yaw" value="0.0"/>
-        <arg name="sdf_robot_file" value="$(find snapping_turtle_asv)/models/snapping_turtle/snapping_turtle.sdf"/>
+        <arg name="sdf_robot_file" value="$(find snapping_turtle_asv)/models/snapping_turtle/model.sdf"/>
     </include>
 
 </launch>
