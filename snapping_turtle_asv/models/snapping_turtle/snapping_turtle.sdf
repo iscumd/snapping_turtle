@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+    <model name="snapping_turtle">
+        <pose>0 0 0.5 0 0 0</pose>
+        <static>false</static>
+
+        <link name="base">
+            <pose>0 0 0 0 0 0</pose> <!-- Starting position -->
+
+            <inertial>
+                <mass>16.0</mass> <!-- Mass of a ~35lbs robot -->
+            </inertial>
+
+            <collision name="base_collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://snapping_turtle/meshes/snapping_turtle_v1.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="base_visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://snapping_turtle/meshes/snapping_turtle_v1.stl</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+        </link>
+
+    </model>
+
+</sdf>
