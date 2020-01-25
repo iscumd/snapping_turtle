@@ -31,13 +31,10 @@
             <visual name="base_visual">
                 <pose>0 0 0 0 0 0</pose>
                 <geometry>
-                    <box>
-                        <size>1 1 1</size>
-                    </box>
-                    <!-- <mesh>
-                        <uri>model://snapping_turtle/meshes/TestBox.STL</uri>
+                    <mesh>
+                        <uri>model://snapping_turtle/meshes/snapping_turtle.dae</uri>
                         <scale>1 1 1</scale>
-                    </mesh> -->
+                    </mesh>
                 </geometry>
             </visual>
 

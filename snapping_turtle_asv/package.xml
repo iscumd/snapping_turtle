@@ -62,7 +62,7 @@
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
+      <gazebo_ros gazebo_plugin_path="${prefix}/src/plugin" gazebo_model_path="${prefix}/models" />
     <!-- Other tools can request additional information be placed here -->
-
   </export>
 </package>
