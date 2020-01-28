@@ -23,7 +23,7 @@
 	<remap from="signal/kill" to="$(arg signal_base)/kill" />
 	<remap from="signal/pause" to="$(arg signal_base)/pause" />
 	<remap from="signal/soft_pause" to="$(arg signal_base)/soft_pause" />
-	<!-- <include file="$(find robot_state_controller)/launch/robot_state_controller/state_control.launch" /> -->
+	<include file="$(find robot_state_controller)/launch/robot_state_controller/state_control.launch" />
 
 	<!-- drive mode switch -->
 	<remap from="robot_state" to="$(arg state_base)/system" />
