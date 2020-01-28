@@ -1,0 +1,8 @@
+[submodule "robot_state_controller"]
+	path = robot_state_controller
+	url = https://github.com/iscumd/robot_state_controller.git
+	branch = master
+[submodule "isc_joy"]
+	path = isc_joy
+	url = https://github.com/iscumd/isc_joy.git
+	branch = master
