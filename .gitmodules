@@ -6,3 +6,6 @@
 	path = isc_joy
 	url = https://github.com/iscumd/isc_joy.git
 	branch = master
+[submodule "realsense-ros"]
+	path = realsense-ros
+	url = https://github.com/IntelRealSense/realsense-ros.git
