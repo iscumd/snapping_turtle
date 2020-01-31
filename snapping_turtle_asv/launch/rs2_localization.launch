@@ -12,16 +12,16 @@
     <!-- Intel Realsense T265 -->
     <include file="$(find realsense2_camera)/launch/rs_t265.launch">
         <arg name="camera" value="$(arg localization_base)/t265"/>
-        <arg name="unite_imu_method" value="true"/>
     </include>
 
     <!-- Intel Realsense D400 -->
     <include file="$(find realsense2_camera)/launch/rs_camera.launch">
         <arg name="camera" value="$(arg perception_base)/d400"/>
+	<arg name="pointcloud_texture_stream" default="RS2_STREAM_ANY"/> 
         <arg name="enable_pointcloud" value="true"/>
     </include>
 
-    <!-- cartographer
+    <!-- cartographer -->
     <node name="cartographer_node" pkg="cartographer_ros"
         type="cartographer_node" args="
         -configuration_directory $(find snapping_turtle_asv)/config/cartographer
@@ -30,6 +30,6 @@
         <remap from="points2" to="$(arg perception_base)/d400/depth/color/points" />
         <remap from="imu" to="$(arg localization_base)/t265/imu/sample" />
         <remap from="odom" to="$(arg localization_base)/t265/odom/sample" />
-    </node> -->
+    </node>
 
 </launch>

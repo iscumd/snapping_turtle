@@ -1,0 +1,13 @@
+float64 probability
+int64 xmin
+float64 xmin_depth
+int64 ymin
+float64 ymin_depth
+int64 xmax
+float64 xmax_depth
+int64 ymax
+float64 ymax_depth
+int16 id
+float64 center_depth
+float64 avg_depth
+string Class
