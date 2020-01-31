@@ -33,4 +33,39 @@
 	<remap from="control_vel" to="$(arg actuation_base)/control" />
 	<remap from="drive_mode" to="$(arg state_base)/drive_mode" />
 	<include file="$(find robot_state_controller)/launch/drive_mode_switch/switch.launch" />
+
+	<!-- Motor controllers -->
+	<arg name="left_vesc_name" default="left_vesc_driver_node" />
+
+  <!-- Optionally launch in GDB, for debugging -->
+  <arg name="debug" default="false" />
+  <arg if="$(arg debug)" name="launch_prefix" value="xterm -e gdb --args" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+
+  <!-- VESC driver parameters -->
+  <arg name="left_vesc_port" default="/dev/ttyACM0" />
+
+  <!-- VESC driver node -->
+<remap from="commands/motor/duty_cycle" to="$(arg actuation_base)/left_vesc/commands/motor/duty_cycle" />
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg left_vesc_name)"
+        output="screen" launch-prefix="$(arg launch_prefix)" >
+    <param name="port" value="$(arg left_vesc_port)" />
+  </node>
+
+	<arg name="right_vesc_name" default="right_vesc_driver_node" />
+
+
+
+  <!-- VESC driver parameters -->
+  <arg name="right_vesc_port" default="/dev/ttyACM1" />
+
+  <!-- VESC driver node -->
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg right_vesc_name)"
+        output="screen" launch-prefix="$(arg launch_prefix)" >
+    <param name="port" value="$(arg right_vesc_port)" />
+  </node>
+<remap from="control" to="$(arg actuation_base)/control" />	
+<remap from="left_duty_cycle" to="$(arg actuation_base)/left_vesc/commands/motor/duty_cycle" />
+<node pkg="snapping_turtle_asv" type="vesc_translator_node" name="vesc_translator_node"/>
+
 </launch>
